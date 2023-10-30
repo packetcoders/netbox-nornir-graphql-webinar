@@ -1,0 +1,70 @@
+service timestamps debug datetime msec
+service timestamps log datetime msec
+no service password-encryption
+
+hostname leaf6
+
+boot-start-marker
+boot-end-marker
+
+aaa new-model
+aaa authentication login default local
+aaa session-id common
+
+ip cef
+no ipv6 cef
+
+multilink bundle-name authenticated
+
+interface GigabitEthernet0/0
+  ip address 10.1.6.2 255.255.255.252
+  no shutdown
+interface GigabitEthernet0/1
+  ip address 10.2.6.2 255.255.255.252
+  no shutdown
+interface GigabitEthernet0/2
+  ip address 172.29.151.108 255.255.255.0
+  no shutdown
+interface GigabitEthernet0/3
+  no ip address
+  shutdown
+interface GigabitEthernet0/4
+  no ip address
+  shutdown
+interface GigabitEthernet0/5
+  no ip address
+  shutdown
+interface GigabitEthernet0/6
+  no ip address
+  shutdown
+interface GigabitEthernet0/7
+  no ip address
+  shutdown
+interface GigabitEthernet0/8
+  no ip address
+  shutdown
+interface GigabitEthernet0/9
+  no ip address
+  shutdown
+interface Loopback 0
+  ip address 6.6.6.6 255.255.255.255
+  no shutdown
+
+router ospf 1
+ network 6.6.6.6 0.0.0.0 area 0
+ network 10.1.0.0 0.0.255.255 area 0
+ network 10.2.0.0 0.0.255.255 area 0
+
+ip route 0.0.0.0 0.0.0.0 172.29.151.254
+ip ssh version 2
+
+control-plane
+
+line con 0
+ exec-timeout 0 0
+line aux 0
+line vty 0 4
+ privilege level 15
+ transport input ssh
+
+no scheduler allocate

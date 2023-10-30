@@ -1,0 +1,27 @@
+[tool.poetry]
+name = "netbox_nornir_graphql_webinar"
+version = "0.1.0"
+description = ""
+authors = [""]
+
+[tool.bandit]
+exclude_dirs = ["venv", ".venv"]
+
+[tool.black]
+exclude = "(.venv)"
+
+[tool.isort]
+profile = "black"
+skip = "venv, .venv"
+balanced_wrapping = true
+atomic = true
+
+[tool.pydocstyle]
+inherit = false
+match = '((?!excluded_file).)*\.py'
+match_dir = '^(?!(venv|.venv)).*'
+
+[tool.mypy]
+exclude = ['venv', '.venv']
+pretty = true
+ignore_missing_imports = true
