@@ -15,29 +15,31 @@ This demo will:
 ## Setup
 
 1. Clone repo:
-```
+```bash
 git clone <>
 ```
 
 2. Create a `.env`.
-```
+```bash
 cp .env.example .env
 ```
 
 3. Populate `.env` with NetBox FQDN and API token.
 4. Create virtual environment.
-```
+```bash
 python -m venv .venv
 source .venv/bin/activate
 ```
 
 5. Install dependancies
+```shell
 python -m pip install -r requirements.txt
+```
 
 ## Run the Demo
 
-```
-$ ./demo/nr_build_w_graphql.py
+```bash
+./demo/nr_build_w_graphql.py
 # Output:
 # ./demo/nr_build_w_graphql.py
 # Build Configs /w NB + GraphQL**************************************************
@@ -74,27 +76,27 @@ $ ./demo/nr_build_w_graphql.py
 
 The rendered files can then be located within the rendered directory:
 
-```
-$ head -n 20 demo/rendered/leaf1.txt
+```bash
+head -n 20 demo/rendered/leaf1.txt
 # Output:
 # service timestamps debug datetime msec
 # service timestamps log datetime msec
 # no service password-encryption
-# 
+#
 # hostname leaf1
-# 
+#
 # boot-start-marker
 # boot-end-marker
-# 
+#
 # aaa new-model
 # aaa authentication login default local
 # aaa session-id common
-# 
+#
 # ip cef
 # no ipv6 cef
-# 
+#
 # multilink bundle-name authenticated
-# 
+#
 # interface GigabitEthernet0/0
 #   ip address 10.1.1.2 255.255.255.252
 ```
