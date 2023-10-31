@@ -16,7 +16,7 @@ This demo will:
 
 1. Clone repo:
 ```bash
-git clone <>
+git clone git@github.com:packetcoders/netbox-nornir-graphql-webinar.git
 ```
 
 2. Create a `.env`.
