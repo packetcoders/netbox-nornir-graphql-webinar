@@ -3,6 +3,9 @@
 This repo contains the examples and scripts from the Packet Coders webinar:
 > Automating Config Generation /w NetBox, Nornir and GraphQL
 
+## Recording
+The recording for the webinar session can be viewed [here](https://www.youtube.com/watch?v=VGw4zkgMLmA).
+
 
 ## Overview
 This demo will:
